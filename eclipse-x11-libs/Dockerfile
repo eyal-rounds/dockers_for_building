@@ -1,6 +1,6 @@
 from ubuntu:xenial
 
-MAINTAINER alljoynsville
+MAINTAINER eyalrounds
 
 ENV DOWNLOAD_URL http://download.eclipse.org/technology/epp/downloads/release/neon/3/eclipse-cpp-neon-3-linux-gtk-x86_64.tar.gz
 ENV INSTALLATION_DIR /usr/local
