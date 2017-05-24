@@ -14,3 +14,4 @@ WORKDIR /home/fuchsia
 ENV PATH /home/fuchsia/.jiri_root/bin:$PATH
 RUN jiri import fuchsia https://fuchsia.googlesource.com/manifest
 RUN jiri update
+RUN bash -c "source scripts/env.sh && envprompt && fset x86-64 --no-goma --no-ccache && fbuild"
