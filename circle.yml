@@ -4,4 +4,4 @@ machine:
 test:
   override:
     - docker pull eyalrounds/fuchsia_env:latest
-    - docker run eyalrounds/fuchsia_env:latest bash -c "source scripts/env.sh && envprompt && fset x86-64 --no-goma --no-ccache && fbuild"
+    - docker run  eyalrounds/fuchsia_env:latest bash -c "source scripts/env.sh && envprompt && fset x86-64 --no-goma --no-ccache && fbuild"
