@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-MAINTAINER alljoynsville
+MAINTAINER eyalrounds
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -yqq update \
  && DEBIAN_FRONTEND=noninteractive apt-get -yqq install  texinfo libglib2.0-dev autoconf \
