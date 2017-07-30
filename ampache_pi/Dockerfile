@@ -26,14 +26,15 @@ RUN php -r "readfile('https://getcomposer.org/installer');" | php && \
 
 # For local testing / faster builds
 # COPY master.tar.gz /opt/master.tar.gz
-ADD https://github.com/ampache/ampache/archive/master.tar.gz /opt/ampache-master.tar.gz
+ADD https://github.com/ampache/ampache/archive/master.tar.gz /opt/ampache-master
 ADD ampache.cfg.php.dist /var/temp/ampache.cfg.php.dist
 
 # extraction / installation
 RUN ls -la /opt/
 RUN rm -rf /var/www/* && \
-    tar -C /var/www -xf /opt/ampache-master.tar.gz ampache-master --strip=1 && \
-    cd /var/www && composer install --prefer-source --no-interaction && \
+    mv /opt/ampache-master/ampache-master/* /var/www && \
+    cd /var/www && chown -R www-data /var/www && \
+    composer install --prefer-source --no-interaction && \
     chown -R www-data /var/www
 
 # setup mysql like this project does it: https://github.com/tutumcloud/tutum-docker-mysql
