@@ -61,4 +61,4 @@ VOLUME ["/media"]
 VOLUME ["/var/www/config"]
 VOLUME ["/var/www/themes"]
 EXPOSE 80
-
+CMD ["/run.sh"]
